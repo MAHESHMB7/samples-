@@ -8,14 +8,14 @@ import requests
 from producer import publish
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:root@db/main'
+app.config["SQLALCHEMY_DATABASE_URI"]='mysql://root:root@db/main'
 CORS(app)
 
 db = SQLAlchemy(app)
 
 
 @dataclass
-class Product(db.Model):
+class product(db.Model):
     id: int
     title: str
     image: str
@@ -26,7 +26,7 @@ class Product(db.Model):
 
 
 @dataclass
-class ProductUser(db.Model):
+class productUser(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer)
     product_id = db.Column(db.Integer)
@@ -36,7 +36,7 @@ class ProductUser(db.Model):
 
 @app.route('/api/products')
 def index():
-    return jsonify(Product.query.all())
+    return jsonify(product.query.all())
 
 
 @app.route('/api/products/<int:id>/like', methods=['POST'])
@@ -45,7 +45,7 @@ def like(id):
     json = req.json()
 
     try:
-        productUser = ProductUser(user_id=json['id'], product_id=id)
+        productUser = productUser(user_id=json['id'], product_id=id)
         db.session.add(productUser)
         db.session.commit()
 
