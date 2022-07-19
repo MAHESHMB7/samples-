@@ -6,6 +6,8 @@ django.setup()
 from products.models import Product
 
 params = pika.URLParameters('amqp://guest:guest@host.docker.internal:5672?connection_attempts=10&retry_delay=10')
+# params = pika.URLParameters('amqp://guest:guest@host.docker.internal:5672/%2F')
+# params = pika.URLParameters('amqp://guest:guest@host.docker.internal:5672')
 
 connection = pika.BlockingConnection(params)
 
