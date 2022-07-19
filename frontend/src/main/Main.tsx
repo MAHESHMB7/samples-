@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Product} from "../interfaces/product";
-
+import { Link } from "react-router-dom";
+import ProductsCreate from '../admin/ProductsCreate';
 const Main = () => {
     const [products, setProducts] = useState([] as Product[]);
 
@@ -66,6 +67,7 @@ const Main = () => {
                     </div>
                 </div>
             </div>
+           <Link to={'ProductsCreate'}>create products</Link>
 
         </main>
     );
