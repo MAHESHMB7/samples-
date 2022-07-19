@@ -1,7 +1,7 @@
 import React, {SyntheticEvent, useState} from 'react';
 import Wrapper from "./Wrapper";
 import {Redirect} from 'react-router-dom';
-
+import { NavLink } from "react-router-dom";
 const ProductsCreate = () => {
     const [title, setTitle] = useState('');
     const [image, setImage] = useState('');
@@ -28,6 +28,7 @@ const ProductsCreate = () => {
 
     return (
         <Wrapper>
+            <NavLink className="album py-5 bg-light" to="/" >create products</NavLink>
             <form onSubmit={submit}>
                 <div className="form-group">
                     <label>Title</label>

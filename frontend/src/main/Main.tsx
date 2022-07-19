@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Product} from "../interfaces/product";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ProductsCreate from '../admin/ProductsCreate';
 const Main = () => {
     const [products, setProducts] = useState([] as Product[]);
@@ -37,6 +37,7 @@ const Main = () => {
     return (
         <main role="main">
             <div className="album py-5 bg-light">
+            <NavLink className="album py-5 bg-light" to="/admin/products/create" >create products</NavLink>
                 <div className="container">
                     <div className="row">
                         {products.map(
@@ -67,7 +68,7 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-           <Link to={'ProductsCreate'}>create products</Link>
+          
 
         </main>
     );
