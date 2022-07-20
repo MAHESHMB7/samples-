@@ -28,7 +28,8 @@ const ProductsCreate = () => {
 
     return (
         <Wrapper>
-            <NavLink className="album py-5 bg-light" to="/" >create products</NavLink>
+            <NavLink className="btn btn-primary" to="/" >HOME</NavLink>
+            <NavLink className="btn btn-primary" to="/admin/products" >Products</NavLink>
             <form onSubmit={submit}>
                 <div className="form-group">
                     <label>Title</label>

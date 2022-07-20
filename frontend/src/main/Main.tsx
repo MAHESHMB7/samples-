@@ -37,7 +37,8 @@ const Main = () => {
     return (
         <main role="main">
             <div className="album py-5 bg-light">
-            <NavLink className="album py-5 bg-light" to="/admin/products/create" >create products</NavLink>
+                <NavLink className="btn btn-primary" to="/admin/products/create"  >Create Products </NavLink>
+                <NavLink className="btn btn-primary" to="/admin/products">Products </NavLink>
                 <div className="container">
                     <div className="row">
                         {products.map(
